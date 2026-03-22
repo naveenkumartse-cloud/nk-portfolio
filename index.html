@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Naveen Kumar — Full Stack .NET Developer with 4+ years of experience building scalable APIs, Angular apps, and enterprise systems. Currently working with Power Platform and Dynamics 365."/>
+  <meta name="keywords" content="Naveen Kumar, Full Stack Developer, .NET Core, ASP.NET Web API, Angular, Blazor, SQL Server, SignalR, Power Apps, Power BI, Dynamics 365"/>
+  <meta property="og:title" content="Naveen Kumar — Full Stack .NET Developer"/>
+  <meta property="og:description" content="Full Stack .NET Developer — .NET Core, Angular, Blazor, SQL Server. 4+ years building production systems."/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="robots" content="index, follow"/>
+  <title>Naveen Kumar — Full Stack .NET Developer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2300D4FF'/%3E%3Cstop offset='100%25' stop-color='%237B5FF5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%2304091A'/%3E%3Crect x='1' y='1' width='62' height='62' rx='13' fill='none' stroke='url(%23g)' stroke-width='1.5' opacity='0.6'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Onest%2Csans-serif' font-weight='800' font-size='24' fill='url(%23g)'%3ENK%3C/text%3E%3C/svg%3E"/>
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2300D4FF'/%3E%3Cstop offset='100%25' stop-color='%237B5FF5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='180' height='180' rx='40' fill='%2304091A'/%3E%3Crect x='3' y='3' width='174' height='174' rx='38' fill='none' stroke='url(%23g)' stroke-width='3' opacity='0.5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Onest%2Csans-serif' font-weight='800' font-size='72' fill='url(%23g)'%3ENK%3C/text%3E%3C/svg%3E"/>
+
+  <!-- Fonts: Onest (headings) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ═══════════════════════════════════════
+       TOKENS
+    ═══════════════════════════════════════ */
+    :root {
+      --ink:   #04091A;
+      --ink1:  #060D20;
+      --ink2:  #0A1428;
+      --card:  rgba(10,20,40,0.68);
+
+      --t1: #E8EEFF;
+      --t2: #8494BC;
+      --t3: #465070;
+      --t4: #283048;
+
+      --c:     #00D4FF;
+      --cd:    #00AACF;
+      --cdim:  rgba(0,212,255,0.09);
+      --cln:   rgba(0,212,255,0.22);
+      --cglow: rgba(0,212,255,0.12);
+
+      --v:     #7B5FF5;
+      --vdim:  rgba(123,95,245,0.09);
+      --vln:   rgba(123,95,245,0.22);
+
+      --e:     #00F5A0;
+      --edim:  rgba(0,245,160,0.09);
+
+      --b0: rgba(255,255,255,0.055);
+      --b1: rgba(255,255,255,0.10);
+      --b2: rgba(255,255,255,0.16);
+
+      --fh: 'Onest', sans-serif;
+      --fb: 'DM Sans', sans-serif;
+
+      --ease: cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ═══════════════════════════════════════
+       RESET
+    ═══════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--fb);
+      background: var(--ink);
+      color: var(--t1);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      cursor: none;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* Grain */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 9990;
+      pointer-events: none; opacity: .028;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    /* ═══════════════════════════════════════
+       CURSOR
+    ═══════════════════════════════════════ */
+    #cd, #cr {
+      position: fixed; border-radius: 50%;
+      pointer-events: none; z-index: 9998;
+      transform: translate(-50%,-50%);
+    }
+    #cd { width: 5px; height: 5px; background: var(--c); top:0; left:0; }
+    #cr {
+      width: 30px; height: 30px;
+      border: 1px solid rgba(0,212,255,.38);
+      top:0; left:0;
+      transition: width .2s var(--ease), height .2s var(--ease), border-color .2s, background .2s;
+    }
+    #cr.h { width: 44px; height: 44px; border-color: var(--c); background: var(--cdim); }
+
+    /* Scroll progress */
+    #spb {
+      position: fixed; top:0; left:0; height:1.5px; width:0%;
+      background: linear-gradient(90deg, var(--c), var(--v));
+      z-index: 9997; transition: width .08s linear;
+    }
+
+    /* ═══════════════════════════════════════
+       AMBIENT BG
+    ═══════════════════════════════════════ */
+    .amb { position: fixed; inset:0; pointer-events:none; z-index:0; }
+    .amb-grid {
+      position: absolute; inset:0;
+      background-image:
+        linear-gradient(rgba(0,212,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,.018) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(ellipse 75% 45% at 50% 0%, black 25%, transparent 100%);
+    }
+    .ag1 {
+      position: absolute; border-radius: 50%; filter: blur(130px);
+      width: 700px; height: 320px;
+      background: radial-gradient(ellipse, rgba(0,212,255,.042) 0%, transparent 70%);
+      top: -80px; left: 50%; transform: translateX(-50%);
+    }
+    .ag2 {
+      position: absolute; border-radius: 50%; filter: blur(130px);
+      width: 500px; height: 500px;
+      background: radial-gradient(ellipse, rgba(123,95,245,.032) 0%, transparent 70%);
+      bottom: 30vh; right: -150px;
+    }
+
+    /* ═══════════════════════════════════════
+       LAYOUT
+    ═══════════════════════════════════════ */
+    .w { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+    section { position: relative; z-index: 1; }
+
+    .rv {
+      opacity: 0; transform: translateY(22px);
+      transition: opacity .65s var(--ease), transform .65s var(--ease);
+    }
+    .rv.in { opacity: 1; transform: none; }
+    .rv.d1{transition-delay:.07s} .rv.d2{transition-delay:.14s}
+    .rv.d3{transition-delay:.21s} .rv.d4{transition-delay:.28s}
+    .rv.d5{transition-delay:.35s} .rv.d6{transition-delay:.42s}
+
+    .ey {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--fh); font-size: 10px; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase; color: var(--c);
+      margin-bottom: 12px;
+    }
+    .ey::before { content:''; width:22px; height:1px; background:var(--c); border-radius:1px; }
+    .ey.c { justify-content:center; }
+    .ey.c::before { display:none; }
+
+    h2.sh {
+      font-family: var(--fh);
+      font-size: clamp(1.85rem, 3.6vw, 2.8rem);
+      font-weight: 800; line-height: 1.08; letter-spacing: -.04em;
+      color: var(--t1); margin-bottom: 14px;
+    }
+    .sub {
+      font-size: .975rem; color: var(--t2);
+      max-width: 500px; line-height: 1.76;
+    }
+
+    /* ═══════════════════════════════════════
+       BUTTONS
+    ═══════════════════════════════════════ */
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: var(--fh); font-size: .85rem; font-weight: 700;
+      border-radius: 8px; padding: 12px 24px;
+      cursor: pointer; border: none; transition: .2s var(--ease);
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .bc { background: var(--c); color: var(--ink); }
+    .bc:hover { background: var(--cd); box-shadow: 0 10px 32px rgba(0,212,255,.28); }
+    .bo { background: transparent; color: var(--t1); border: 1px solid var(--b1); }
+    .bo:hover { background: rgba(255,255,255,.04); border-color: var(--b2); }
+    .bsm { padding: 9px 18px; font-size: .78rem; }
+
+    /* ═══════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════ */
+    nav {
+      position: fixed; top:0; left:0; right:0;
+      z-index: 1000; padding: 15px 0;
+      transition: background .35s, border-color .35s;
+    }
+    nav.s {
+      background: rgba(4,9,26,.92);
+      backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid var(--b0);
+    }
+    .nrow { display:flex; align-items:center; justify-content:space-between; }
+
+    /* Logo */
+    .logo { display:inline-flex; align-items:center; gap:10px; }
+    .lmark {
+      width: 36px; height: 36px; flex-shrink:0;
+      border-radius: 9px;
+      background: linear-gradient(135deg, rgba(0,212,255,.13), rgba(123,95,245,.13));
+      border: 1px solid rgba(0,212,255,.24);
+      display: flex; align-items:center; justify-content:center;
+      position: relative; transition: box-shadow .25s, border-color .25s;
+    }
+    .lmark::before {
+      content:''; position:absolute; inset:0; border-radius:9px;
+      background: linear-gradient(135deg, rgba(0,212,255,.05), rgba(123,95,245,.05));
+    }
+    .lmark-t {
+      font-family: var(--fh); font-size: .72rem; font-weight: 900;
+      letter-spacing: .04em;
+      background: linear-gradient(135deg, var(--c), var(--v));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      background-clip:text; position:relative; z-index:1;
+    }
+    .logo:hover .lmark {
+      border-color: rgba(0,212,255,.48);
+      box-shadow: 0 0 20px rgba(0,212,255,.18), 0 0 8px rgba(123,95,245,.10);
+    }
+    .ltxt { display:flex; flex-direction:column; gap:1px; line-height:1; }
+    .lname { font-family:var(--fh); font-size:.92rem; font-weight:800; letter-spacing:-.03em; color:var(--t1); }
+    .lname em { font-style:normal; background:linear-gradient(90deg,var(--c),var(--v)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .lrole { font-family:var(--fh); font-size:.55rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--t3); }
+
+    .nlinks { display:flex; gap:26px; align-items:center; }
+    .nlinks a { font-family:var(--fh); font-size:.8rem; font-weight:600; color:var(--t2); transition:color .2s; }
+    .nlinks a:hover, .nlinks a.act { color:var(--t1); }
+    .nlinks .ncta {
+      padding: 8px 18px; border-radius: 7px;
+      border: 1px solid var(--cln); background: var(--cdim);
+      color: var(--c); font-weight: 700;
+    }
+    .nlinks .ncta:hover { background:rgba(0,212,255,.16); box-shadow:0 0 28px var(--cglow); color:var(--c); }
+    .burger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+    .burger span { display:block; width:22px; height:1.5px; background:var(--t1); border-radius:2px; }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    #hero {
+      min-height: 100vh; display:flex; align-items:center;
+      padding: 130px 0 80px; position:relative;
+    }
+    .hero-bg-num {
+      position: absolute; font-family: var(--fh);
+      font-size: clamp(180px,22vw,320px); font-weight: 900;
+      color: transparent; -webkit-text-stroke: 1px rgba(0,212,255,.04);
+      line-height: 1; right: -10px; top: 50%; transform: translateY(-50%);
+      pointer-events:none; user-select:none; letter-spacing:-.06em;
+    }
+    .hbadge {
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 6px 14px; border-radius:6px;
+      border: 1px solid var(--b0); background:rgba(0,212,255,.04);
+      font-family:var(--fh); font-size:.73rem; font-weight:600;
+      color:var(--t2); margin-bottom:28px; letter-spacing:.02em;
+    }
+    .ldot {
+      width:7px; height:7px; border-radius:50%;
+      background:var(--e); box-shadow:0 0 0 2px rgba(0,245,160,.2);
+      animation: ld 2.5s ease-in-out infinite;
+    }
+    @keyframes ld { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+    .hh {
+      font-family: var(--fh);
+      font-size: clamp(2.6rem, 5.8vw, 4.4rem);
+      font-weight: 900; line-height: 1.04; letter-spacing: -.05em;
+      color: var(--t1); margin-bottom: 8px;
+    }
+    .hh2 {
+      font-family: var(--fh);
+      font-size: clamp(1.3rem, 2.8vw, 2rem);
+      font-weight: 500; line-height: 1.25; letter-spacing: -.02em;
+      color: var(--t2); margin-bottom: 24px;
+    }
+    .hh2 em { font-style:normal; color:var(--v); }
+    .hsub {
+      font-size: 1.05rem; color: var(--t2);
+      max-width: 580px; line-height: 1.78; margin-bottom: 40px;
+    }
+    .hsub strong { color:var(--t1); font-weight:600; }
+    .hbtns { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:56px; }
+    .hbar {
+      display:flex; align-items:center; gap:36px;
+      padding-top:32px; border-top:1px solid var(--b0);
+    }
+    .hm-n { font-family:var(--fh); font-size:1.8rem; font-weight:900; letter-spacing:-.05em; line-height:1; color:var(--t1); display:block; }
+    .hm-n sup { font-size:.85rem; color:var(--c); }
+    .hm-l { font-size:.7rem; color:var(--t3); display:block; margin-top:4px; letter-spacing:.02em; font-family:var(--fh); font-weight:600; }
+    .hm-sep { width:1px; height:32px; background:var(--b1); }
+
+    /* ═══════════════════════════════════════
+       ABOUT
+    ═══════════════════════════════════════ */
+    #about { padding:120px 0; }
+    .about-g { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
+    .ab-p { font-size:.95rem; color:var(--t2); line-height:1.78; margin-bottom:18px; }
+    .ab-p strong { color:var(--t1); font-weight:600; }
+    .ab-p em { font-style:italic; color:var(--c); }
+    .prins { display:flex; flex-direction:column; gap:12px; margin-top:28px; }
+    .prin {
+      display:flex; gap:13px; align-items:flex-start;
+      padding:16px; border-radius:10px;
+      border:1px solid var(--b0); background:rgba(6,13,32,.55);
+      backdrop-filter:blur(12px);
+      transition:border-color .2s, transform .2s;
+    }
+    .prin:hover { border-color:var(--b1); transform:translateX(3px); }
+    .pic { width:34px; height:34px; flex-shrink:0; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.9rem; }
+    .pic-c { background:var(--cdim); border:1px solid var(--cln); }
+    .pic-v { background:var(--vdim); border:1px solid var(--vln); }
+    .pic-e { background:var(--edim); border:1px solid rgba(0,245,160,.2); }
+    .ptit { font-family:var(--fh); font-size:.85rem; font-weight:700; color:var(--t1); margin-bottom:3px; }
+    .pdsc { font-size:.79rem; color:var(--t2); line-height:1.6; }
+    .ab-right { display:flex; flex-direction:column; gap:14px; }
+    .pcard {
+      background:var(--card); border:1px solid var(--b0);
+      border-radius:16px; padding:32px 26px;
+      backdrop-filter:blur(16px); text-align:center; position:relative; overflow:hidden;
+    }
+    .pcard::before { content:''; position:absolute; top:0; left:12%; right:12%; height:1px; background:linear-gradient(90deg, transparent, var(--c), transparent); }
+    .pavi {
+      width:80px; height:80px; border-radius:50%;
+      background:linear-gradient(135deg, var(--c), var(--cd));
+      display:flex; align-items:center; justify-content:center;
+      font-family:var(--fh); font-size:1.5rem; font-weight:900;
+      color:var(--ink); margin:0 auto 16px;
+      box-shadow:0 0 0 3px rgba(0,212,255,.14), 0 0 0 6px rgba(0,212,255,.05);
+    }
+    .pnm { font-family:var(--fh); font-size:1.15rem; font-weight:800; letter-spacing:-.02em; }
+    .ptl { font-size:.8rem; color:var(--t2); margin-top:5px; line-height:1.5; }
+    .ploc { font-size:.73rem; color:var(--t3); margin-top:7px; }
+    .ptags { display:flex; flex-wrap:wrap; justify-content:center; gap:5px; margin-top:16px; }
+    .ptag { padding:3px 10px; border-radius:5px; font-family:var(--fh); font-size:.68rem; font-weight:700; border:1px solid; }
+    .ptc { background:var(--cdim); color:var(--c); border-color:var(--cln); }
+    .ptv { background:var(--vdim); color:var(--v); border-color:var(--vln); }
+    .frow { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+    .ftile {
+      background:var(--card); border:1px solid var(--b0);
+      border-radius:11px; padding:16px 10px; text-align:center;
+      backdrop-filter:blur(12px); transition:border-color .2s;
+    }
+    .ftile:hover { border-color:var(--b1); }
+    .fn { font-family:var(--fh); font-size:1.55rem; font-weight:900; letter-spacing:-.05em; color:var(--c); display:block; }
+    .fl { font-size:.67rem; color:var(--t3); display:block; margin-top:3px; font-family:var(--fh); font-weight:600; }
+
+    /* ═══════════════════════════════════════
+       SKILLS — HONEST TWO-TIER
+    ═══════════════════════════════════════ */
+    #skills {
+      padding:120px 0;
+      background:linear-gradient(180deg, transparent 0%, rgba(6,13,32,.65) 50%, transparent 100%);
+    }
+    .skh { text-align:center; margin-bottom:52px; }
+    .tier-bar { display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+    .tier-txt { font-family:var(--fh); font-size:.68rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; white-space:nowrap; }
+    .tier-line { flex:1; height:1px; }
+    .tc .tier-txt { color:var(--c); }
+    .tc .tier-line { background:linear-gradient(90deg, var(--cln), transparent); }
+    .tv .tier-txt { color:var(--v); }
+    .tv .tier-line { background:linear-gradient(90deg, var(--vln), transparent); }
+    .skrow { display:grid; grid-template-columns:repeat(4,1fr); gap:13px; margin-bottom:36px; }
+    .skrow.t2 { grid-template-columns:repeat(3,1fr); margin-bottom:0; }
+    .sg {
+      background:var(--card); border:1px solid var(--b0);
+      border-radius:11px; padding:20px 16px; backdrop-filter:blur(14px);
+      transition:border-color .2s, box-shadow .2s; position:relative; overflow:hidden;
+    }
+    .sg::after { content:''; position:absolute; top:0; left:0; right:0; height:1.5px; opacity:0; transition:opacity .2s; }
+    .sg-c::after { background:linear-gradient(90deg, transparent, var(--c), transparent); }
+    .sg-v::after { background:linear-gradient(90deg, transparent, var(--v), transparent); }
+    .sg:hover { border-color:var(--b1); }
+    .sg-c:hover { box-shadow:0 8px 30px rgba(0,212,255,.07); }
+    .sg-v:hover { box-shadow:0 8px 30px rgba(123,95,245,.07); }
+    .sg:hover::after { opacity:1; }
+    .sghd { display:flex; align-items:center; gap:9px; margin-bottom:12px; }
+    .sgic { width:32px; height:32px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.95rem; }
+    .sic-c { background:var(--cdim); border:1px solid var(--cln); }
+    .sic-v { background:var(--vdim); border:1px solid var(--vln); }
+    .sgnm { font-family:var(--fh); font-size:.82rem; font-weight:800; color:var(--t1); }
+    .sgsb { font-size:.68rem; color:var(--t3); margin-top:2px; font-family:var(--fh); }
+    .bdgs { display:flex; flex-wrap:wrap; gap:5px; }
+    .bd {
+      padding:3px 10px; border-radius:5px;
+      font-family:var(--fh); font-size:.68rem; font-weight:700;
+      border:1px solid; cursor:default; transition:transform .15s;
+    }
+    .bd:hover { transform:translateY(-1px); }
+    .bdc { background:var(--cdim); color:var(--c); border-color:var(--cln); }
+    .bdv { background:var(--vdim); color:var(--v); border-color:var(--vln); }
+    .gflag {
+      display:inline-flex; align-items:center; gap:5px;
+      padding:2px 9px; border-radius:100px;
+      border:1px solid var(--vln); background:var(--vdim);
+      font-family:var(--fh); font-size:.62rem; font-weight:800;
+      color:var(--v); letter-spacing:.06em; text-transform:uppercase; margin-bottom:8px;
+    }
+    .gflag::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--v); animation:gf 2s ease-in-out infinite; }
+    @keyframes gf { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    /* ═══════════════════════════════════════
+       PROJECTS
+    ═══════════════════════════════════════ */
+    #projects { padding:120px 0; }
+    .prjhd { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:44px; }
+
+    /* Filter tabs */
+    .prj-tabs { display:flex; gap:8px; margin-bottom:32px; flex-wrap:wrap; }
+    .ptab {
+      padding:6px 14px; border-radius:6px;
+      font-family:var(--fh); font-size:.72rem; font-weight:700;
+      border:1px solid var(--b0); background:transparent; color:var(--t2);
+      cursor:pointer; transition:all .2s;
+    }
+    .ptab:hover, .ptab.on { background:var(--cdim); border-color:var(--cln); color:var(--c); }
+
+    .prjgrid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+    .pc {
+      background:var(--card); border:1px solid var(--b0);
+      border-radius:14px; overflow:hidden; backdrop-filter:blur(16px);
+      transition:border-color .25s, transform .25s, box-shadow .25s; position:relative;
+      display:flex; flex-direction:column;
+    }
+    .pc:hover { border-color:var(--b1); transform:translateY(-4px); }
+    .pc.pc-c:hover { box-shadow:0 20px 50px rgba(0,212,255,.09); }
+    .pc.pc-v:hover { box-shadow:0 20px 50px rgba(123,95,245,.09); }
+    .pc.pc-e:hover { box-shadow:0 20px 50px rgba(0,245,160,.07); }
+    .pc.featured { grid-column:span 2; flex-direction:row; }
+
+    /* project header strip */
+    .pchd {
+      padding:20px 22px 16px;
+      border-bottom:1px solid var(--b0);
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .pc.featured .pchd { flex-direction:column; align-items:flex-start; gap:10px; width:220px; flex-shrink:0; border-bottom:none; border-right:1px solid var(--b0); padding:28px 22px; }
+    .pctyp {
+      font-family:var(--fh); font-size:.62rem; font-weight:800;
+      letter-spacing:.12em; text-transform:uppercase;
+      padding:3px 9px; border-radius:4px; border:1px solid;
+    }
+    .tpc { color:var(--c); border-color:var(--cln); background:var(--cdim); }
+    .tpv { color:var(--v); border-color:var(--vln); background:var(--vdim); }
+    .tpe { color:var(--e); border-color:rgba(0,245,160,.2); background:var(--edim); }
+    .pcnum { font-family:var(--fh); font-size:2.8rem; font-weight:900; letter-spacing:-.06em; color:transparent; -webkit-text-stroke:1px rgba(255,255,255,.06); line-height:1; }
+    .pcic { font-size:2.2rem; }
+    .rbdg {
+      display:inline-flex; align-items:center; gap:5px;
+      padding:3px 9px; border-radius:100px;
+      font-family:var(--fh); font-size:.62rem; font-weight:800;
+      letter-spacing:.04em;
+    }
+    .rb-full { background:var(--cdim); color:var(--c); border:1px solid var(--cln); }
+    .rb-contrib { background:var(--vdim); color:var(--v); border:1px solid var(--vln); }
+
+    .pcbody { padding:22px; flex:1; display:flex; flex-direction:column; }
+    .pc.featured .pcbody { padding:28px; }
+    .pcmeta { display:flex; align-items:center; gap:7px; margin-bottom:8px; }
+    .pcyr, .pccl { font-family:var(--fh); font-size:.67rem; color:var(--t3); font-weight:600; }
+    .pcdot { width:3px; height:3px; border-radius:50%; background:var(--t4); }
+    .pctit {
+      font-family:var(--fh); font-size:1rem; font-weight:800;
+      letter-spacing:-.025em; line-height:1.2; color:var(--t1); margin-bottom:7px;
+    }
+    .pc.featured .pctit { font-size:1.2rem; }
+    .pctag { font-size:.83rem; color:var(--t2); margin-bottom:18px; line-height:1.65; }
+    .psi { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px; }
+    .psil { font-family:var(--fh); font-size:.63rem; font-weight:800; letter-spacing:.10em; text-transform:uppercase; color:var(--t3); margin-bottom:4px; }
+    .psit { font-size:.79rem; color:var(--t2); line-height:1.55; }
+    .pctech { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:14px; }
+    .pctb {
+      padding:2px 9px; border-radius:5px;
+      font-family:var(--fh); font-size:.65rem; font-weight:600;
+      background:rgba(255,255,255,.04); border:1px solid var(--b0); color:var(--t2);
+    }
+    .pcimp {
+      margin-top:auto;
+      display:flex; align-items:center; gap:8px;
+      padding:10px 13px; border-radius:7px;
+      background:rgba(0,245,160,.06); border:1px solid rgba(0,245,160,.14);
+    }
+    .pcimp-t { font-family:var(--fh); font-size:.76rem; font-weight:700; color:var(--e); }
+    .hnote {
+      margin-top:auto;
+      display:flex; align-items:center; gap:8px;
+      padding:9px 13px; border-radius:7px;
+      background:var(--vdim); border:1px solid var(--vln);
+    }
+    .hnote-t { font-family:var(--fh); font-size:.76rem; font-weight:700; color:var(--v); }
+    .pcarr {
+      position:absolute; top:20px; right:20px;
+      width:26px; height:26px; border-radius:50%;
+      background:rgba(255,255,255,.04); border:1px solid var(--b0);
+      display:flex; align-items:center; justify-content:center;
+      font-size:.68rem; color:var(--t3);
+      transition:background .2s, border-color .2s, color .2s, transform .2s;
+    }
+    .pc:hover .pcarr { background:var(--cdim); border-color:var(--cln); color:var(--c); transform:rotate(45deg); }
+
+    /* ═══════════════════════════════════════
+       EXPERIENCE
+    ═══════════════════════════════════════ */
+    #experience {
+      padding:120px 0;
+      background:linear-gradient(180deg, transparent, rgba(6,13,32,.65) 50%, transparent);
+    }
+    .expg { display:grid; grid-template-columns:280px 1fr; gap:72px; align-items:start; }
+    .expl { position:sticky; top:96px; }
+    .tl { position:relative; }
+    .tl::before {
+      content:''; position:absolute; left:13px; top:6px; bottom:0;
+      width:1px;
+      background:linear-gradient(180deg, var(--c) 0%, rgba(0,212,255,.15) 65%, transparent 100%);
+    }
+    .tli { position:relative; padding-left:42px; margin-bottom:40px; }
+    .tli:last-child { margin-bottom:0; }
+    .tldot {
+      position:absolute; left:5px; top:4px;
+      width:16px; height:16px; border-radius:50%;
+      background:var(--ink); border:2px solid var(--c);
+      box-shadow:0 0 0 3px rgba(0,212,255,.08), 0 0 12px rgba(0,212,255,.18);
+    }
+    .tldot.p { border-color:var(--t3); box-shadow:none; }
+    .tlper {
+      font-family:var(--fh); font-size:.67rem; font-weight:800;
+      letter-spacing:.08em; text-transform:uppercase; color:var(--t3);
+      margin-bottom:5px; display:flex; align-items:center; gap:8px;
+    }
+    .cpill {
+      padding:1px 7px; border-radius:100px;
+      background:var(--edim); color:var(--e);
+      font-size:.6rem; font-weight:800; border:1px solid rgba(0,245,160,.2);
+    }
+    .tlrl { font-family:var(--fh); font-size:.98rem; font-weight:800; letter-spacing:-.02em; color:var(--t1); margin-bottom:2px; }
+    .tlco { font-size:.8rem; color:var(--c); font-weight:600; margin-bottom:12px; font-family:var(--fh); }
+    .tlpts { display:flex; flex-direction:column; gap:6px; }
+    .tlpts li { font-size:.8rem; color:var(--t2); padding-left:13px; position:relative; line-height:1.6; }
+    .tlpts li::before { content:'–'; position:absolute; left:0; color:var(--t3); }
+    .tltech { display:flex; flex-wrap:wrap; gap:4px; margin-top:10px; }
+    .ttb { padding:2px 9px; border-radius:5px; font-family:var(--fh); font-size:.65rem; font-weight:700; background:var(--cdim); color:var(--c); border:1px solid var(--cln); }
+
+    /* ═══════════════════════════════════════
+       SERVICES
+    ═══════════════════════════════════════ */
+    #services { padding:120px 0; }
+    .svchd { text-align:center; margin-bottom:52px; }
+    .svcg { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .sv {
+      background:var(--card); border:1px solid var(--b0);
+      border-radius:13px; padding:26px 20px; backdrop-filter:blur(14px);
+      transition:transform .2s, border-color .2s, box-shadow .2s; position:relative; overflow:hidden;
+    }
+    .sv::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1.5px; opacity:0; transition:opacity .2s; }
+    .sv-c::after { background:linear-gradient(90deg, transparent, var(--c), transparent); }
+    .sv-v::after { background:linear-gradient(90deg, transparent, var(--v), transparent); }
+    .sv:hover { transform:translateY(-4px); }
+    .sv-c:hover { border-color:var(--cln); box-shadow:0 16px 40px rgba(0,212,255,.07); }
+    .sv-v:hover { border-color:var(--vln); box-shadow:0 16px 40px rgba(123,95,245,.07); }
+    .sv:hover::after { opacity:1; }
+    .svic { width:44px; height:44px; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; margin-bottom:16px; }
+    .sic-c { background:var(--cdim); border:1px solid var(--cln); }
+    .sic-v { background:var(--vdim); border:1px solid var(--vln); }
+    .svconf {
+      display:inline-flex; align-items:center; gap:4px;
+      padding:2px 8px; border-radius:100px;
+      font-family:var(--fh); font-size:.6rem; font-weight:800;
+      letter-spacing:.04em; text-transform:uppercase; margin-bottom:10px;
+    }
+    .conf-y { background:var(--edim); color:var(--e); border:1px solid rgba(0,245,160,.2); }
+    .conf-g { background:var(--vdim); color:var(--v); border:1px solid var(--vln); }
+    .svtit { font-family:var(--fh); font-size:.9rem; font-weight:800; color:var(--t1); margin-bottom:9px; }
+    .svdsc { font-size:.79rem; color:var(--t2); line-height:1.65; margin-bottom:14px; }
+    .svls { display:flex; flex-direction:column; gap:4px; }
+    .svls li { font-size:.75rem; color:var(--t3); padding-left:11px; position:relative; }
+    .svls li::before { content:'·'; position:absolute; left:2px; }
+
+    /* ═══════════════════════════════════════
+       CONTACT
+    ═══════════════════════════════════════ */
+    #contact { padding:120px 0 80px; }
+    .ctabox {
+      border-radius:22px; border:1px solid var(--b0);
+      background:var(--card); backdrop-filter:blur(20px);
+      padding:80px 60px; text-align:center; position:relative; overflow:hidden;
+    }
+    .ctabox::before { content:''; position:absolute; top:0; left:12%; right:12%; height:1px; background:linear-gradient(90deg, transparent, var(--c), var(--v), transparent); }
+    .ctabg {
+      position:absolute; width:400px; height:400px; border-radius:50%;
+      background:radial-gradient(circle, rgba(0,212,255,.05) 0%, transparent 70%);
+      top:-150px; left:50%; transform:translateX(-50%); filter:blur(60px); pointer-events:none;
+    }
+    .ctaey { display:block; font-family:var(--fh); font-size:.68rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--c); margin-bottom:14px; }
+    .ctah {
+      font-family:var(--fh); font-size:clamp(1.8rem,3.8vw,2.9rem);
+      font-weight:900; letter-spacing:-.05em; line-height:1.08; margin-bottom:14px; position:relative; z-index:1;
+    }
+    .ctah span { background:linear-gradient(135deg, var(--c), var(--v)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .ctasub { font-size:.975rem; color:var(--t2); max-width:460px; margin:0 auto 40px; line-height:1.75; position:relative; z-index:1; }
+    .ctabtns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:44px; position:relative; z-index:1; }
+    .socrow { display:flex; justify-content:center; gap:18px; position:relative; z-index:1; }
+    .sl { display:flex; align-items:center; gap:6px; font-family:var(--fh); font-size:.78rem; font-weight:600; color:var(--t2); transition:color .2s; }
+    .sl:hover { color:var(--t1); }
+    .sl svg { opacity:.4; transition:opacity .2s; }
+    .sl:hover svg { opacity:1; }
+
+    /* Footer */
+    footer { border-top:1px solid var(--b0); padding:26px 0; position:relative; z-index:1; }
+    .ft { display:flex; justify-content:space-between; align-items:center; }
+    .ftc { font-family:var(--fh); font-size:.72rem; color:var(--t3); }
+    .ftc em { font-style:normal; color:var(--c); }
+    .ftls { display:flex; gap:20px; }
+    .ftls a { font-family:var(--fh); font-size:.72rem; color:var(--t3); transition:color .2s; }
+    .ftls a:hover { color:var(--t1); }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width:1024px) {
+      .skrow { grid-template-columns:repeat(2,1fr); }
+      .skrow.t2 { grid-template-columns:repeat(2,1fr); }
+      .about-g { grid-template-columns:1fr; gap:40px; }
+      .expg { grid-template-columns:1fr; gap:0; }
+      .expl { position:static; margin-bottom:36px; }
+      .svcg { grid-template-columns:repeat(2,1fr); }
+      .prjgrid { grid-template-columns:1fr; }
+      .pc.featured { grid-column:span 1; flex-direction:column; }
+      .pc.featured .pchd { width:auto; border-right:none; border-bottom:1px solid var(--b0); flex-direction:row; padding:18px 22px; }
+    }
+    @media (max-width:768px) {
+      .w { padding:0 18px; }
+      .nlinks { display:none; }
+      .nlinks.open {
+        display:flex; flex-direction:column;
+        position:fixed; inset:0; top:62px;
+        background:rgba(4,9,26,.97); backdrop-filter:blur(24px);
+        align-items:center; justify-content:center; gap:24px; z-index:999;
+      }
+      .nlinks.open a { font-size:1.3rem; }
+      .burger { display:flex; }
+      .hero-bg-num { display:none; }
+      .hbar { flex-wrap:wrap; gap:16px; }
+      .hm-sep { display:none; }
+      .psi { grid-template-columns:1fr; }
+      .svcg { grid-template-columns:1fr; }
+      .ctabox { padding:48px 20px; }
+      .frow { grid-template-columns:repeat(3,1fr); }
+      .prjhd { flex-direction:column; align-items:flex-start; gap:12px; }
+      .ft { flex-direction:column; gap:12px; text-align:center; }
+      body { cursor:auto; }
+      #cd, #cr { display:none; }
+    }
+    @media (max-width:480px) {
+      .skrow, .skrow.t2 { grid-template-columns:1fr; }
+      .hh { font-size:2.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="cd"></div>
+  <div id="cr"></div>
+  <div id="spb"></div>
+  <div class="amb" aria-hidden="true">
+    <div class="amb-grid"></div>
+    <div class="ag1"></div>
+    <div class="ag2"></div>
+  </div>
+
+  <!-- ══════════════════════════
+       NAV
+  ══════════════════════════ -->
+  <nav id="nav">
+    <div class="w">
+      <div class="nrow">
+        <a href="#hero" class="logo">
+          <div class="lmark"><span class="lmark-t">NK</span></div>
+          <div class="ltxt">
+            <span class="lname">Naveen<em>.</em></span>
+            <span class="lrole">.NET · Angular · Power Platform</span>
+          </div>
+        </a>
+        <ul class="nlinks" id="nl">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact" class="ncta">Hire Me</a></li>
+        </ul>
+        <div class="burger" id="burger" onclick="toggleNav()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════
+       HERO
+  ══════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg-num" aria-hidden="true">NK</div>
+    <div class="w">
+      <div style="max-width:840px;">
+
+        <div class="hbadge">
+          <span class="ldot"></span>
+          Open to roles &amp; freelance — Coimbatore, Tamil Nadu
+        </div>
+
+        <h1 class="hh">Full Stack .NET Developer<br/>Building Scalable Systems.</h1>
+        <p class="hh2">
+          Backend-focused engineer, now working with<br/>
+          <em>Power Platform &amp; Enterprise Tools.</em>
+        </p>
+
+        <p class="hsub">
+          Strong in <strong>.NET Core, ASP.NET Web API, Angular, Blazor &amp; SQL Server.</strong>
+          4+ years shipping production-grade APIs and web applications —
+          currently working with Power Apps and exploring Dynamics 365 F&amp;O.
+        </p>
+
+        <div class="hbtns">
+          <a href="#projects" class="btn bc">View My Work</a>
+          <a href="#contact" class="btn bo">Contact Me →</a>
+          <!-- Replace with your hosted resume PDF URL -->
+          <a href="YOUR_RESUME_PDF_URL" class="btn bo bsm" target="_blank">⬇ Resume</a>
+        </div>
+
+        <div class="hbar">
+          <div>
+            <span class="hm-n">4<sup>+</sup></span>
+            <span class="hm-l">Years Experience</span>
+          </div>
+          <div class="hm-sep"></div>
+          <div>
+            <span class="hm-n">7</span>
+            <span class="hm-l">Projects Delivered</span>
+          </div>
+          <div class="hm-sep"></div>
+          <div>
+            <span class="hm-n">3</span>
+            <span class="hm-l">Enterprise Systems</span>
+          </div>
+          <div class="hm-sep"></div>
+          <div>
+            <span class="hm-n">2</span>
+            <span class="hm-l">Gov-Level Clients</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+       ABOUT
+  ══════════════════════════ -->
+  <section id="about">
+    <div class="w">
+      <div class="about-g">
+        <div>
+          <span class="ey rv">About Me</span>
+          <h2 class="sh rv d1">Strong Backend Engineer.<br/>Growing into Enterprise.</h2>
+
+          <div class="rv d2">
+            <p class="ab-p">
+              I'm a Full Stack .NET Developer with <strong>4+ years of production experience</strong>
+              building REST APIs, Angular dashboards, Blazor apps, and SQL Server systems.
+              My work includes delivering systems for <strong>US Army clients</strong> where
+              security and reliability are non-negotiable.
+            </p>
+            <p class="ab-p">
+              I'm currently working with <em>Power Apps and Power BI</em>, and getting
+              hands-on exposure to Dynamics 365 F&amp;O. I'm not presenting these as expert skills —
+              I'm being honest about where I am and <strong>deliberate about where I'm heading.</strong>
+            </p>
+            <p class="ab-p">
+              My goal: become the developer who bridges strong backend engineering
+              with enterprise business automation.
+            </p>
+          </div>
+
+          <div class="prins rv d3">
+            <div class="prin">
+              <div class="pic pic-c">🎯</div>
+              <div>
+                <div class="ptit">Backend-first mindset</div>
+                <div class="pdsc">Clean APIs, solid data architecture, and security-aware design — before anything else.</div>
+              </div>
+            </div>
+            <div class="prin">
+              <div class="pic pic-v">📈</div>
+              <div>
+                <div class="ptit">Honest, deliberate growth</div>
+                <div class="pdsc">I label what I'm strong at and what I'm learning. Companies get exactly what they hire for.</div>
+              </div>
+            </div>
+            <div class="prin">
+              <div class="pic pic-e">🔒</div>
+              <div>
+                <div class="ptit">Security-conscious by default</div>
+                <div class="pdsc">JWT, RBAC, audit logging, and encrypted data handling — learned the hard way on gov projects.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ab-right">
+          <div class="pcard rv d2">
+            <div class="pavi">NK</div>
+            <div class="pnm">Naveen Kumar</div>
+            <div class="ptl">Full Stack .NET Developer<br/>→ Transitioning into Enterprise Solutions</div>
+            <div class="ploc">📍 Coimbatore, Tamil Nadu · Open to Remote</div>
+            <div class="ptags">
+              <span class="ptag ptc">.NET Core 9</span>
+              <span class="ptag ptc">ASP.NET Web API</span>
+              <span class="ptag ptc">Angular</span>
+              <span class="ptag ptc">Blazor WASM</span>
+              <span class="ptag ptc">SQL Server</span>
+              <span class="ptag ptc">SignalR</span>
+              <span class="ptag ptv">Power Apps ↗</span>
+              <span class="ptag ptv">Power BI ↗</span>
+              <span class="ptag ptv">D365 F&amp;O ↗</span>
+            </div>
+          </div>
+          <div class="frow rv d3">
+            <div class="ftile">
+              <span class="fn">4+</span>
+              <span class="fl">Years Building</span>
+            </div>
+            <div class="ftile">
+              <span class="fn">7</span>
+              <span class="fl">Projects Live</span>
+            </div>
+            <div class="ftile">
+              <span class="fn">0</span>
+              <span class="fl">Data Incidents</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+       SKILLS
+  ══════════════════════════ -->
+  <section id="skills">
+    <div class="w">
+      <div class="skh">
+        <span class="ey c rv">Capabilities</span>
+        <h2 class="sh rv d1" style="text-align:center;">Where I'm Strong.<br/>Where I'm Growing.</h2>
+        <p class="sub rv d2" style="text-align:center;margin:0 auto;">Honest skill grouping — matched exactly to my resume.</p>
+      </div>
+
+      <!-- Tier 1 -->
+      <div class="tier-bar tc rv d2">
+        <span class="tier-txt">✓ Core Skills — Production Ready</span>
+        <div class="tier-line"></div>
+      </div>
+      <div class="skrow rv d3">
+        <div class="sg sg-c">
+          <div class="sghd">
+            <div class="sgic sic-c">⚙️</div>
+            <div><div class="sgnm">Backend</div><div class="sgsb">APIs &amp; Services</div></div>
+          </div>
+          <div class="bdgs">
+            <span class="bd bdc">.NET Core 9</span>
+            <span class="bd bdc">ASP.NET Web API</span>
+            <span class="bd bdc">ASP.NET MVC</span>
+            <span class="bd bdc">C# 12</span>
+            <span class="bd bdc">Microservices</span>
+            <span class="bd bdc">REST APIs</span>
+            <span class="bd bdc">SignalR</span>
+            <span class="bd bdc">JWT / OAuth</span>
+          </div>
+        </div>
+        <div class="sg sg-c">
+          <div class="sghd">
+            <div class="sgic sic-c">🗄️</div>
+            <div><div class="sgnm">Database</div><div class="sgsb">SQL &amp; Data</div></div>
+          </div>
+          <div class="bdgs">
+            <span class="bd bdc">MS SQL Server</span>
+            <span class="bd bdc">Stored Procedures</span>
+            <span class="bd bdc">T-SQL</span>
+            <span class="bd bdc">Query Optimisation</span>
+            <span class="bd bdc">EF Core</span>
+            <span class="bd bdc">DB Migrations</span>
+          </div>
+        </div>
+        <div class="sg sg-c">
+          <div class="sghd">
+            <div class="sgic sic-c">🎨</div>
+            <div><div class="sgnm">Frontend</div><div class="sgsb">SPA &amp; UI</div></div>
+          </div>
+          <div class="bdgs">
+            <span class="bd bdc">Angular</span>
+            <span class="bd bdc">Blazor WebAssembly</span>
+            <span class="bd bdc">TypeScript</span>
+            <span class="bd bdc">RxJS</span>
+            <span class="bd bdc">HTML5 / CSS3</span>
+            <span class="bd bdc">Tailwind CSS</span>
+          </div>
+        </div>
+        <div class="sg sg-c">
+          <div class="sghd">
+            <div class="sgic sic-c">🔧</div>
+            <div><div class="sgnm">Tools &amp; DevOps</div><div class="sgsb">Dev Workflow</div></div>
+          </div>
+          <div class="bdgs">
+            <span class="bd bdc">Git / GitHub</span>
+            <span class="bd bdc">Azure DevOps</span>
+            <span class="bd bdc">Postman</span>
+            <span class="bd bdc">Visual Studio 2022</span>
+            <span class="bd bdc">Azure (basic)</span>
+            <span class="bd bdc">Swagger / OpenAPI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tier 2 -->
+      <div class="tier-bar tv rv d3" style="margin-top:36px;">
+        <span class="tier-txt">↗ Currently Working With — Learning &amp; Exposure Stage</span>
+        <div class="tier-line"></div>
+      </div>
+      <div class="skrow t2 rv d4">
+        <div class="sg sg-v">
+          <div class="sghd">
+            <div class="sgic sic-v">⚡</div>
+            <div><div class="sgnm">Power Platform</div><div class="sgsb">Apps &amp; Automation</div></div>
+          </div>
+          <div class="gflag">Currently working with</div>
+          <div class="bdgs">
+            <span class="bd bdv">Power Apps (Canvas)</span>
+            <span class="bd bdv">Power Automate</span>
+            <span class="bd bdv">Power BI</span>
+            <span class="bd bdv">Dataverse (basic)</span>
+            <span class="bd bdv">Power FX (basic)</span>
+          </div>
+        </div>
+        <div class="sg sg-v">
+          <div class="sghd">
+            <div class="sgic sic-v">🏛️</div>
+            <div><div class="sgnm">Dynamics 365 F&amp;O</div><div class="sgsb">ERP — Hands-on exposure</div></div>
+          </div>
+          <div class="gflag">Hands-on exposure</div>
+          <div class="bdgs">
+            <span class="bd bdv">D365 F&amp;O (basic)</span>
+            <span class="bd bdv">ERP Workflows</span>
+            <span class="bd bdv">X++ (introductory)</span>
+            <span class="bd bdv">Finance Modules</span>
+          </div>
+        </div>
+        <div class="sg sg-v">
+          <div class="sghd">
+            <div class="sgic sic-v">📊</div>
+            <div><div class="sgnm">Microsoft Fabric &amp; BI</div><div class="sgsb">Data &amp; Reporting</div></div>
+          </div>
+          <div class="gflag">Exploring</div>
+          <div class="bdgs">
+            <span class="bd bdv">Microsoft Fabric</span>
+            <span class="bd bdv">Power BI Reports</span>
+            <span class="bd bdv">DAX (basic)</span>
+            <span class="bd bdv">Data Modelling</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+       PROJECTS — ALL 7
+  ══════════════════════════ -->
+  <section id="projects">
+    <div class="w">
+      <div class="prjhd">
+        <div>
+          <span class="ey rv">Work</span>
+          <h2 class="sh rv d1">Projects &amp; Contributions</h2>
+          <p class="sub rv d2">Real clients. Honest roles. Shipped code.</p>
+        </div>
+        <!-- Replace with your GitHub URL -->
+        <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener" class="btn bo bsm rv d2">GitHub →</a>
+      </div>
+
+      <div class="prjgrid">
+
+        <!-- 1. HMID — FEATURED -->
+        <div class="pc pc-c featured rv d1">
+          <div class="pchd">
+            <div class="pcic">🏥</div>
+            <div class="pctyp tpc">Full Stack · Gov</div>
+            <div class="rbdg rb-full">🏗️ Full Stack Dev</div>
+            <div class="pcnum">01</div>
+          </div>
+          <div class="pcbody">
+            <div class="pcmeta">
+              <span class="pcyr">2023 – 2024</span>
+              <span class="pcdot"></span>
+              <span class="pccl">US Army — Hazardous Materials Division</span>
+            </div>
+            <div class="pctit">HMID — Hazardous Materials Information &amp; Data System</div>
+            <p class="pctag">Medical data management system for US Army personnel — handling sensitive healthcare records, clinical reporting, and personnel medical history. Owned the backend architecture and Angular dashboard.</p>
+            <div class="psi">
+              <div>
+                <div class="psil">🔴 Problem</div>
+                <div class="psit">Medical records fragmented across disconnected manual systems causing critical delays in personnel care decisions.</div>
+              </div>
+              <div>
+                <div class="psil">✅ My Solution</div>
+                <div class="psit">.NET Core REST API, SQL Server schema design, JWT RBAC with audit logging, and Angular dashboard for centralized record access.</div>
+              </div>
+            </div>
+            <div class="pctech">
+              <span class="pctb">.NET Core</span>
+              <span class="pctb">ASP.NET Web API</span>
+              <span class="pctb">SQL Server</span>
+              <span class="pctb">Angular</span>
+              <span class="pctb">JWT + RBAC</span>
+              <span class="pctb">Audit Logging</span>
+              <span class="pctb">Azure</span>
+            </div>
+            <div class="pcimp">
+              <span class="pcimp-t">📈 Eliminated manual record retrieval — centralized healthcare access across multiple Army units</span>
+            </div>
+          </div>
+          <div class="pcarr">↗</div>
+        </div>
+
+        <!-- 2. CRP -->
+        <div class="pc pc-c rv d1">
+          <div class="pchd">
+            <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+              <div class="pctyp tpc">Full Stack · Integration</div>
+              <div class="pcnum">02</div>
+            </div>
+          </div>
+          <div class="pcbody">
+            <div class="pcmeta">
+              <span class="pcyr">2023</span>
+              <span class="pcdot"></span>
+              <span class="pccl">US Army — Operations</span>
+            </div>
+            <div class="rbdg rb-full" style="margin-bottom:8px;">🏗️ Full Stack Developer</div>
+            <div class="pctit">CRP — Command Reporting &amp; Workflow Platform</div>
+            <p class="pctag">Operational reporting platform consolidating data from 5+ sources into one dashboard with automated workflows and background job scheduling.</p>
+            <div class="psi">
+              <div>
+                <div class="psil">🔴 Problem</div>
+                <div class="psit">Manual reports from multiple sources — slow, inconsistent, hard to audit.</div>
+              </div>
+              <div>
+                <div class="psil">✅ Solution</div>
+                <div class="psit">REST API aggregation layer, background scheduled jobs, and Angular dashboard views for consolidated reporting.</div>
+              </div>
+            </div>
+            <div class="pctech">
+              <span class="pctb">.NET Core</span>
+              <span class="pctb">SQL Server</span>
+              <span class="pctb">Angular</span>
+              <span class="pctb">Background Jobs</span>
+              <span class="pctb">Azure DevOps</span>
+            </div>
+            <div class="pcimp">
+              <span class="pcimp-t">⚡ 5+ data sources unified — reduced reporting effort significantly for ops teams</span>
+            </div>
+          </div>
+          <div class="pcarr">↗</div>
+        </div>
+
+        <!-- 3. ARMP -->
+        <div class="pc pc-v rv d2">
+          <div class="pchd">
+            <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+              <div class="pctyp tpv">ERP · D365 Exposure</div>
+              <div class="pcnum">03</div>
+            </div>
+          </div>
+          <div class="pcbody">
+            <div class="pcmeta">
+              <span class="pcyr">2024 – Present</span>
+              <span class="pcdot"></span>
+              <span class="pccl">Enterprise Resource Program</span>
+            </div>
+            <div class="rbdg rb-contrib" style="margin-bottom:8px;">📚 Contributor &amp; Learner</div>
+            <div class="pctit">ARMP — Enterprise Resource Management (D365 F&amp;O)</div>
+            <p class="pctag">First hands-on exposure to Dynamics 365 F&amp;O. Contributed to integration work and assisted with Power Apps and Power BI setup while learning ERP workflows.</p>
+            <div class="psi">
+              <div>
+                <div class="psil">📘 What I Learned</div>
+                <div class="psit">D365 F&amp;O module structure, basic X++ customization, and how Power Automate connects ERP approval flows.</div>
+              </div>
+              <div>
+                <div class="psil">🔧 Contributed</div>
+                <div class="psit">.NET Core integration connecting external APIs to D365, Power Apps Canvas app for data entry, Power BI report setup.</div>
+              </div>
+            </div>
+            <div class="pctech">
+              <span class="pctb">D365 F&amp;O (basic)</span>
+              <span class="pctb">Power Apps</span>
+              <span class="pctb">Power Automate</span>
+              <span class="pctb">Power BI</span>
+              <span class="pctb">.NET Core</span>
+              <span class="pctb">Dataverse</span>
+            </div>
+            <div class="hnote">
+              <span class="hnote-t">📚 Active learning project — building enterprise platform skills step by step</span>
+            </div>
+          </div>
+          <div class="pcarr">↗</div>
+        </div>
+
+        <!-- 4. PIM -->
+        <div class="pc pc-c rv d3">
+          <div class="pchd">
+            <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+              <div class="pctyp tpc">Full Stack · SaaS</div>
+              <div class="pcnum">04</div>
+            </div>
+          </div>
+          <div class="pcbody">
+            <div class="pcmeta">
+              <span class="pcyr">2023</span>
+              <span class="pcdot"></span>
+              <span class="pccl">Commercial Client</span>
+            </div>
+            <div class="rbdg rb-full" style="margin-bottom:8px;">🏗️ Full Stack Developer</div>
+            <div class="pctit">PIM — Product Information Management System</div>
+            <p class="pctag">Centralised product data management platform with attribute management, category hierarchy, bulk import/export, and role-based access for catalogue teams.</p>
+            <div class="psi">
+              <div>
+                <div class="psil">🔴 Problem</div>
+                <div class="psit">Product data scattered across spreadsheets causing inconsistency and slow time-to-market for catalogue updates.</div>
+              </div>
+              <div>
+                <div class="psil">✅ Solution</div>
+                <div class="psit">ASP.NET Web API backend with dynamic attribute engine, Angular frontend, SQL Server with optimized bulk operations.</div>
+              </div>
+            </div>
+            <div class="pctech">
+              <span class="pctb">ASP.NET Web API</span>
+              <span class="pctb">Angular</span>
+              <span class="pctb">SQL Server</span>
+              <span class="pctb">Entity Framework</span>
+              <span class="pctb">JWT Auth</span>
+            </div>
+            <div class="pcimp">
+              <span class="pcimp-t">🚀 Reduced catalogue update time by ~60% — replaced spreadsheet-based workflow</span>
+            </div>
+          </div>
+          <div class="pcarr">↗</div>
+        </div>
+
+        <!-- 5. Smart Cater -->
+        <div class="pc pc-c rv d4">
+          <div class="pchd">
+            <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+              <div class="pctyp tpc">Full Stack · Web App</div>
+              <div class="pcnum">05</div>
+            </div>
+          </div>
+          <div class="pcbody">
+            <div class="pcmeta">
+              <span class="pcyr">2022</span>
+              <span class="pcdot"></span>
+              <span class="pccl">Commercial Client</span>
+            </div>
+            <div class="rbdg rb-full" style="margin-bottom:8px;">🏗️ Full Stack Developer</div>
+            <div class="pctit">Smart Cater — Catering Management Platform</div>
+            <p class="pctag">End-to-end catering business management system with order management, menu builder, event scheduling, and customer portal built with Blazor WebAssembly.</p>
+            <div class="psi">
+              <div>
+                <div class="psil">🔴 Problem</div>
+                <div class="psit">Manual order tracking and scheduling via phone calls and paper — no visibility into bookings or revenue.</div>
+              </div>
+              <div>
+                <div class="psil">✅ Solution</div>
+                <div class="psit">Blazor WASM frontend with real-time SignalR notifications, .NET Core API, and SQL Server for order and event management.</div>
+              </div>
+            </div>
+            <div class="pctech">
+              <span class="pctb">Blazor WebAssembly</span>
+              <span class="pctb">.NET Core</span>
+              <span class="pctb">SignalR</span>
+              <span class="pctb">SQL Server</span>
+              <span class="pctb">JWT Auth</span>
+            </div>
+            <div class="pcimp">
+              <span class="pcimp-t">📊 Full business digitisation — real-time order tracking &amp; event management</span>
+            </div>
+          </div>
+          <div class="pcarr">↗</div>
+        </div>
+
+        <!-- 6. EMS -->
+        <div class="pc pc-e rv d5">
+          <div class="pchd">
+            <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+              <div class="pctyp tpe">Full Stack · Enterprise</div>
+              <div class="pcnum">06</div>
+            </div>
+          </div>
+          <div class="pcbody">
+            <div class="pcmeta">
+              <span class="pcyr">2022</span>
+              <span class="pcdot"></span>
+              <span class="pccl">Internal / Client</span>
+            </div>
+            <div class="rbdg rb-full" style="margin-bottom:8px;">🏗️ Full Stack Developer</div>
+            <div class="pctit">EMS — Employee Management System</div>
+            <p class="pctag">Comprehensive HR and employee management platform covering onboarding, attendance tracking, leave management, payroll integration, and role-based dashboards.</p>
+            <div class="psi">
+              <div>
+                <div class="psil">🔴 Problem</div>
+                <div class="psit">HR processes managed via spreadsheets with no audit trail, no self-service portal, and manual payroll calculations.</div>
+              </div>
+              <div>
+                <div class="psil">✅ Solution</div>
+                <div class="psit">ASP.NET MVC + Web API backend, Angular frontend with role-based dashboards, SQL Server with stored procedures for payroll logic.</div>
+              </div>
+            </div>
+            <div class="pctech">
+              <span class="pctb">ASP.NET MVC</span>
+              <span class="pctb">Web API</span>
+              <span class="pctb">Angular</span>
+              <span class="pctb">SQL Server</span>
+              <span class="pctb">Stored Procedures</span>
+              <span class="pctb">RBAC</span>
+            </div>
+            <div class="pcimp">
+              <span class="pcimp-t">⚡ Full HR digitisation — attendance, leave &amp; payroll in one system</span>
+            </div>
+          </div>
+          <div class="pcarr">↗</div>
+        </div>
+
+        <!-- 7. Affiliate Platform -->
+        <div class="pc pc-c rv d6">
+          <div class="pchd">
+            <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+              <div class="pctyp tpc">Full Stack · Platform</div>
+              <div class="pcnum">07</div>
+            </div>
+          </div>
+          <div class="pcbody">
+            <div class="pcmeta">
+              <span class="pcyr">2023</span>
+              <span class="pcdot"></span>
+              <span class="pccl">Commercial Client</span>
+            </div>
+            <div class="rbdg rb-full" style="margin-bottom:8px;">🏗️ Full Stack Developer</div>
+            <div class="pctit">Affiliate Marketing Platform</div>
+            <p class="pctag">Multi-tier affiliate management platform with commission tracking, referral link generation, real-time earnings dashboard, and automated payout processing.</p>
+            <div class="psi">
+              <div>
+                <div class="psil">🔴 Problem</div>
+                <div class="psit">Manual affiliate tracking via spreadsheets — inaccurate commissions, delayed payouts, and no visibility for affiliates.</div>
+              </div>
+              <div>
+                <div class="psil">✅ Solution</div>
+                <div class="psit">ASP.NET Web API with multi-tier commission engine, Angular dashboard for affiliates, SQL Server with optimized tracking queries.</div>
+              </div>
+            </div>
+            <div class="pctech">
+              <span class="pctb">ASP.NET Web API</span>
+              <span class="pctb">Angular</span>
+              <span class="pctb">SQL Server</span>
+              <span class="pctb">JWT Auth</span>
+              <span class="pctb">SignalR</span>
+              <span class="pctb">Azure</span>
+            </div>
+            <div class="pcimp">
+              <span class="pcimp-t">💰 Automated commission calculations — eliminated manual tracking errors</span>
+            </div>
+          </div>
+          <div class="pcarr">↗</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+       EXPERIENCE
+  ══════════════════════════ -->
+  <section id="experience">
+    <div class="w">
+      <div class="expg">
+        <div class="expl">
+          <span class="ey rv">Career</span>
+          <h2 class="sh rv d1">Experience</h2>
+          <p class="sub rv d2">4+ years delivering in production. No padding.</p>
+          <div style="margin-top:24px;" class="rv d3">
+            <a href="#contact" class="btn bc">Let's Talk →</a>
+          </div>
+        </div>
+        <div class="tl rv d2">
+
+          <div class="tli">
+            <div class="tldot"></div>
+            <div class="tlper">
+              2025 – Present
+              <span class="cpill">Current</span>
+            </div>
+            <!-- Replace with your actual company -->
+            <div class="tlrl">Software Engineer</div>
+            <div class="tlco">→ ByteForza, Coimbatore</div>
+            <ul class="tlpts">
+              <li>Delivered HMID &amp; CRP systems for US Army clients — zero critical incidents over 18+ months</li>
+              <li>Contributed to ARMP (D365 F&amp;O ERP) — gaining enterprise platform exposure</li>
+              <li>Built PIM system reducing catalogue update time by ~60%</li>
+              <li>Developed Smart Cater platform using Blazor WASM with real-time SignalR notifications</li>
+              <li>Implemented JWT authentication, RBAC, and audit logging across multiple production systems</li>
+              <li>Worked with Power Apps and Power BI on active enterprise projects</li>
+            </ul>
+            <div class="tltech">
+              <span class="ttb">.NET Core 9</span>
+              <span class="ttb">Angular</span>
+              <span class="ttb">Blazor WASM</span>
+              <span class="ttb">SQL Server</span>
+              <span class="ttb">SignalR</span>
+              <span class="ttb">Power Apps</span>
+              <span class="ttb">Azure</span>
+            </div>
+          </div>
+
+          <div class="tli">
+            <div class="tldot p"></div>
+            <div class="tlper">2023 – 2025</div>
+            <div class="tlrl">Junior Full Stack Developer</div>
+            <div class="tlco">→ Set Matrix, Tamil Nadu</div>
+            <ul class="tlpts">
+              <li>Built EMS — full HR platform with attendance, leave, and payroll using ASP.NET MVC &amp; Angular</li>
+              <li>Developed 20+ REST API endpoints for business management applications</li>
+              <li>Implemented JWT authentication and role-based access control across 3 apps</li>
+              <li>Improved API response times by ~40% via stored procedure optimisation and caching</li>
+            </ul>
+            <div class="tltech">
+              <span class="ttb">ASP.NET MVC</span>
+              <span class="ttb">Web API</span>
+              <span class="ttb">Angular</span>
+              <span class="ttb">SQL Server</span>
+              <span class="ttb">C#</span>
+            </div>
+          </div>
+
+          <div class="tli" style="margin-bottom:0;">
+            <div class="tldot p"></div>
+            <div class="tlper">2021 – 2023</div>
+            <div class="tlrl">Software Engineer</div>
+            <div class="tlco">→ StudioSoft Solutions, Tamil Nadu</div>
+            <ul class="tlpts">
+              <li>Built internal CRUD applications with ASP.NET MVC and SQL Server</li>
+              <li>Learned repository pattern, SOLID principles, and unit testing in real codebase</li>
+              <li>Shipped first production feature in week 6 — ahead of schedule</li>
+            </ul>
+            <div class="tltech">
+              <span class="ttb">ASP.NET MVC</span>
+              <span class="ttb">SQL Server</span>
+              <span class="ttb">C#</span>
+              <span class="ttb">jQuery</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+       SERVICES
+  ══════════════════════════ -->
+  <section id="services">
+    <div class="w">
+      <div class="svchd">
+        <span class="ey c rv">Services</span>
+        <h2 class="sh rv d1" style="text-align:center;">What I Deliver</h2>
+        <p class="sub rv d2" style="text-align:center;margin:0 auto;">Only services I can confidently execute — with clear confidence levels.</p>
+      </div>
+      <div class="svcg">
+
+        <div class="sv sv-c rv d1">
+          <div class="svic sic-c">🌐</div>
+          <div class="svconf conf-y">✓ Production Ready</div>
+          <div class="svtit">Full Stack Web Development</div>
+          <p class="svdsc">End-to-end web apps — .NET Core backend + Angular or Blazor frontend. Built for scale, security, and long-term maintainability.</p>
+          <ul class="svls">
+            <li>Enterprise portals &amp; internal tools</li>
+            <li>SaaS platform development</li>
+            <li>Angular / Blazor WASM frontends</li>
+            <li>Azure cloud deployment</li>
+          </ul>
+        </div>
+
+        <div class="sv sv-c rv d2">
+          <div class="svic sic-c">🔌</div>
+          <div class="svconf conf-y">✓ Production Ready</div>
+          <div class="svtit">REST API Design &amp; Integration</div>
+          <p class="svdsc">Robust, documented REST APIs with JWT auth, RBAC, third-party integrations, and microservice architecture. My core strength.</p>
+          <ul class="svls">
+            <li>RESTful API design + Swagger docs</li>
+            <li>JWT, OAuth &amp; security patterns</li>
+            <li>Microservices architecture</li>
+            <li>Third-party API integrations</li>
+          </ul>
+        </div>
+
+        <div class="sv sv-c rv d3">
+          <div class="svic sic-c">🗄️</div>
+          <div class="svconf conf-y">✓ Production Ready</div>
+          <div class="svtit">Database Design &amp; Optimisation</div>
+          <p class="svdsc">SQL Server schema design, stored procedures, query optimisation, and EF Core data layers for fast, reliable data access.</p>
+          <ul class="svls">
+            <li>Schema design &amp; normalisation</li>
+            <li>Stored procedure development</li>
+            <li>Query performance tuning</li>
+            <li>EF Core with migrations</li>
+          </ul>
+        </div>
+
+        <div class="sv sv-c rv d4">
+          <div class="svic sic-c">🔒</div>
+          <div class="svconf conf-y">✓ Production Ready</div>
+          <div class="svtit">Auth, Security &amp; Performance</div>
+          <p class="svdsc">JWT authentication, OAuth, RBAC, audit trails, and performance optimisation — from real experience on security-sensitive government systems.</p>
+          <ul class="svls">
+            <li>JWT + refresh token flows</li>
+            <li>Role-based access control</li>
+            <li>Audit trail implementation</li>
+            <li>API rate limiting &amp; caching</li>
+          </ul>
+        </div>
+
+        <div class="sv sv-v rv d5">
+          <div class="svic sic-v">⚡</div>
+          <div class="svconf conf-g">↗ Basic to Intermediate</div>
+          <div class="svtit">Basic Power Apps Solutions</div>
+          <p class="svdsc">Canvas Power Apps for forms, data collection, and basic workflow automation. Practical solutions for straightforward business needs — honest scope upfront.</p>
+          <ul class="svls">
+            <li>Canvas app development</li>
+            <li>Basic Power Automate flows</li>
+            <li>Power BI report setup</li>
+            <li>Dataverse configuration</li>
+          </ul>
+        </div>
+
+        <div class="sv sv-c rv d6">
+          <div class="svic sic-c">⚡</div>
+          <div class="svconf conf-y">✓ Production Ready</div>
+          <div class="svtit">Real-Time Features with SignalR</div>
+          <p class="svdsc">Real-time notifications, live dashboards, and event-driven updates using ASP.NET SignalR — integrated with Angular or Blazor frontends.</p>
+          <ul class="svls">
+            <li>Real-time notification systems</li>
+            <li>Live data dashboards</li>
+            <li>Chat &amp; messaging features</li>
+            <li>Event broadcast architecture</li>
+          </ul>
+        </div>
+
+      </div>
+      <div style="text-align:center;margin-top:36px;" class="rv d5">
+        <a href="#contact" class="btn bc">Start a Project →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+       CONTACT
+  ══════════════════════════ -->
+  <section id="contact">
+    <div class="w">
+      <div class="ctabox rv">
+        <div class="ctabg"></div>
+        <span class="ctaey">Available Now — Full-time &amp; Freelance</span>
+        <h2 class="ctah">
+          Let's Build Scalable,<br/>
+          <span>Reliable Systems Together</span>
+        </h2>
+        <p class="ctasub">
+          If you need a backend engineer who delivers clean code, is honest about
+          capabilities, and is actively growing into enterprise solutions — I'd love to connect.
+        </p>
+        <div class="ctabtns">
+          <!-- Replace with your real email -->
+          <a href="mailto:naveenkumartse@gmail.com" class="btn bc">📧 Email Me</a>
+          <!-- Replace with your LinkedIn URL -->
+          <a href="https://www.linkedin.com/in/naveen-kumar-4bb027213" target="_blank" rel="noopener" class="btn bo">LinkedIn →</a>
+          <!-- Replace with your resume PDF URL -->
+          <a href="YOUR_RESUME_PDF_URL" class="btn bo bsm" target="_blank">⬇ Resume PDF</a>
+        </div>
+        <div class="socrow">
+          <!-- Replace with your GitHub URL -->
+          <a href="https://github.com/naveenkumartse-cloud" target="_blank" rel="noopener" class="sl">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/naveen-kumar-4bb027213" target="_blank" rel="noopener" class="sl">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:naveenkumartse@gmail.com" class="sl">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="w">
+      <div class="ft">
+        <div class="ftc">Built by <em>Naveen Kumar</em> · 2024 · Coimbatore, Tamil Nadu</div>
+        <div class="ftls">
+          <a href="#hero">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════
+       JAVASCRIPT
+  ══════════════════════════ -->
+  <script>
+    /* Cursor */
+    const cd=document.getElementById('cd'),cr=document.getElementById('cr');
+    let mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';});
+    (function loop(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop)})();
+    document.querySelectorAll('a,button,.bd,.pc,.sv,.prin,.sg').forEach(el=>{
+      el.addEventListener('mouseenter',()=>cr.classList.add('h'));
+      el.addEventListener('mouseleave',()=>cr.classList.remove('h'));
+    });
+
+    /* Scroll progress + nav */
+    const spb=document.getElementById('spb'),nav=document.getElementById('nav');
+    window.addEventListener('scroll',()=>{
+      const st=document.documentElement.scrollTop;
+      const sh=document.documentElement.scrollHeight-window.innerHeight;
+      spb.style.width=(st/sh*100)+'%';
+      nav.classList.toggle('s',st>40);
+    },{passive:true});
+
+    /* Mobile nav */
+    function toggleNav(){document.getElementById('nl').classList.toggle('open');}
+    document.querySelectorAll('#nl a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nl').classList.remove('open')));
+
+    /* Scroll reveal */
+    const ro=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+    },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+    /* Active nav */
+    const secs=[...document.querySelectorAll('section[id]')];
+    const nas=[...document.querySelectorAll('.nlinks a:not(.ncta)')];
+    window.addEventListener('scroll',()=>{
+      let cur='';
+      secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id;});
+      nas.forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+cur));
+    },{passive:true});
+  </script>
+</body>
+</html>
